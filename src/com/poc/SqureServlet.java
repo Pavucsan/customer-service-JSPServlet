@@ -5,12 +5,14 @@ import java.io.PrintWriter;
 import java.net.CookieStore;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/sq")
 public class SqureServlet extends HttpServlet {
 
 	@Override
@@ -50,8 +52,9 @@ public class SqureServlet extends HttpServlet {
 		int squre = (int) Math.pow(num1, num1);
 		System.out.println("RequestDispatche Squre: " + squre);
 		PrintWriter out = resp.getWriter();
-
+//		out.println("<html><body bgcolor='cyan'>");
 		out.println("Squre : " + squre);
+//		out.println("</body></html>");
 	}
 
 }
